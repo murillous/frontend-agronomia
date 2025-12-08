@@ -6,7 +6,7 @@ interface MetricCardProps {
   value: string | number;
   unit?: string;
   icon: LucideIcon;
-  trend?: string; // Ex: "normal", "warning", "danger"
+  trend?: string; 
   color?: "emerald" | "blue" | "amber" | "indigo" | "rose";
 }
 

@@ -11,7 +11,6 @@ export default function RecordsPage() {
   const { history, loading, error } = useWeather(limit);
 
   const handleExport = (type: "csv" | "json") => {
-    // Exporta o 'history' original (dados completos)
     const filename = `ciclus-dados-${format(new Date(), "yyyy-MM-dd-HHmm")}`;
     if (type === "csv") downloadCSV(history, filename);
     else downloadJSON(history, filename);
@@ -26,9 +25,6 @@ export default function RecordsPage() {
 
   return (
     <div className="max-w-[95%] mx-auto space-y-6 pb-12">
-      {" "}
-      {/* Aumentei a largura da página para caber mais dados */}
-      {/* Header e Controles */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
         <div>
           <h1 className="text-2xl font-bold text-slate-800">
@@ -70,7 +66,6 @@ export default function RecordsPage() {
           </div>
         </div>
       </div>
-      {/* Tabela de Dados Completa */}
       <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
         {loading ? (
           <div className="p-12 text-center text-slate-400">
@@ -147,14 +142,12 @@ export default function RecordsPage() {
                       key={row.id}
                       className="hover:bg-slate-50 transition-colors"
                     >
-                      {/* Data (Fixo à esquerda visualmente pelo border-r) */}
                       <td className="px-4 py-3 font-mono text-xs text-slate-500 border-r border-slate-100 bg-white group-hover:bg-slate-50">
                         {isDateValid
                           ? format(dateObj, "dd/MM/yyyy HH:mm:ss")
                           : "--"}
                       </td>
 
-                      {/* Colunas de Dados - Formatadas para 2 casas decimais */}
                       <td className="px-4 py-3 text-slate-600 font-mono text-xs">
                         {row.id}
                       </td>
@@ -210,7 +203,6 @@ export default function RecordsPage() {
           </div>
         )}
 
-        {/* Footer */}
         <div className="bg-slate-50 border-t border-slate-200 px-6 py-4 text-xs text-slate-500 flex justify-between items-center">
           <span>{history.length} registros carregados</span>
           <span className="italic">

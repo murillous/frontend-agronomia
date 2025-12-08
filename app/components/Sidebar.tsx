@@ -5,10 +5,10 @@ import { LayoutDashboard, LineChart, List, Server } from "lucide-react";
 import clsx from "clsx";
 
 const menuItems = [
-  { icon: Server, label: "API", href: "/" }, // Antigo index.html
-  { icon: LayoutDashboard, label: "Painel", href: "/dashboard" }, // Antigo home.html
-  { icon: List, label: "Registros", href: "/registros" }, // Antigo details.html
-  { icon: LineChart, label: "Análises", href: "/analises" }, // Antigo analytics.html
+  { icon: Server, label: "API", href: "/" },
+  { icon: LayoutDashboard, label: "Painel", href: "/dashboard" },
+  { icon: List, label: "Registros", href: "/registros" },
+  { icon: LineChart, label: "Análises", href: "/analises" },
 ];
 
 export default function Sidebar() {
@@ -17,7 +17,9 @@ export default function Sidebar() {
   return (
     <aside className="w-64 bg-white border-r border-slate-200 hidden md:flex flex-col h-screen sticky top-0">
       <div className="p-6 border-b border-slate-100">
-        <h1 className="text-xl font-bold text-emerald-600 tracking-tight">Ciclus</h1>
+        <h1 className="text-xl font-bold text-emerald-600 tracking-tight">
+          Ciclus
+        </h1>
         <p className="text-xs text-slate-400 font-medium">Weather Station</p>
       </div>
       <nav className="flex-1 p-4 space-y-1">

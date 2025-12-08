@@ -4,7 +4,7 @@ import { useMemo } from "react";
 import { Scatter } from "react-chartjs-2";
 import { calculateDeltaT } from "@/app/utils/agronomy";
 import { ChartOptions } from "chart.js"; // IMPORTAÇÃO NECESSÁRIA
-import "@/app/lib/chart-setup"; 
+import "@/app/lib/chart-setup";
 
 interface Props {
   currentTemp: number;
@@ -12,7 +12,6 @@ interface Props {
 }
 
 export default function DeltaTChart({ currentTemp, currentHumidity }: Props) {
-  // Gera os dados do background apenas uma vez
   const { ideal, warning, danger } = useMemo(() => {
     const idealData = [];
     const warningData = [];
@@ -23,7 +22,8 @@ export default function DeltaTChart({ currentTemp, currentHumidity }: Props) {
         const dt = calculateDeltaT(t, h);
         const point = { x: t, y: h };
         if (dt >= 2 && dt <= 8) idealData.push(point);
-        else if ((dt >= 1 && dt < 2) || (dt > 8 && dt <= 10)) warningData.push(point);
+        else if ((dt >= 1 && dt < 2) || (dt > 8 && dt <= 10))
+          warningData.push(point);
         else dangerData.push(point);
       }
     }
@@ -37,12 +37,12 @@ export default function DeltaTChart({ currentTemp, currentHumidity }: Props) {
       {
         label: "Atual",
         data: [{ x: currentTemp, y: currentHumidity }],
-        backgroundColor: "#1e293b", // Slate-800
+        backgroundColor: "#1e293b",
         borderColor: "#fff",
         borderWidth: 3,
         pointRadius: 10,
         pointStyle: "crossRot",
-        order: 0, // Fica por cima
+        order: 0,
       },
       {
         label: "Ideal (2-8°C)",
@@ -68,8 +68,7 @@ export default function DeltaTChart({ currentTemp, currentHumidity }: Props) {
     ],
   };
 
-  // TIPAGEM CORRETA AQUI: ChartOptions<'scatter'>
-  const options: ChartOptions<'scatter'> = {
+  const options: ChartOptions<"scatter"> = {
     responsive: true,
     maintainAspectRatio: false,
     plugins: {
@@ -77,22 +76,23 @@ export default function DeltaTChart({ currentTemp, currentHumidity }: Props) {
       tooltip: {
         callbacks: {
           label: (ctx) => {
-            if (ctx.datasetIndex === 0) return `Atual: ΔT ${currentDelta.toFixed(1)}°C`;
-            return ctx.dataset.label || '';
+            if (ctx.datasetIndex === 0)
+              return `Atual: ΔT ${currentDelta.toFixed(1)}°C`;
+            return ctx.dataset.label || "";
           },
         },
       },
     },
     scales: {
-      x: { 
-        title: { display: true, text: "Temperatura (°C)" }, 
-        min: 10, 
-        max: 40 
+      x: {
+        title: { display: true, text: "Temperatura (°C)" },
+        min: 10,
+        max: 40,
       },
-      y: { 
-        title: { display: true, text: "Umidade (%)" }, 
-        min: 0, 
-        max: 100 
+      y: {
+        title: { display: true, text: "Umidade (%)" },
+        min: 0,
+        max: 100,
       },
     },
   };

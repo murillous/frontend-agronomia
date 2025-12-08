@@ -14,7 +14,7 @@ export function downloadCSV(data: WeatherData[], filename: string) {
   const headers = Object.keys(data[0]).join(",");
   const rows = data.map((row) =>
     Object.values(row)
-      .map((value) => `"${value}"`) // Escapa valores
+      .map((value) => `"${value}"`)
       .join(",")
   );
 

@@ -1,5 +1,3 @@
-// src/types/weather.ts
-
 export interface WeatherData {
   id: string;
   ts: number; // Timestamp

@@ -1,4 +1,3 @@
-// src/hooks/useWeather.ts
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
@@ -30,12 +29,12 @@ export function useWeather(limit = 1) {
   }, [limit]);
 
   useEffect(() => {
-    fetchData(); 
+    fetchData();
 
-    const interval = setInterval(fetchData, 60000); 
+    const interval = setInterval(fetchData, 60000);
 
-    return () => clearInterval(interval); 
-  }, [fetchData]); 
+    return () => clearInterval(interval);
+  }, [fetchData]);
   return {
     current: data[0] || null,
     history: data,

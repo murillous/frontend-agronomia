@@ -2,7 +2,6 @@ export function calculateDeltaT(temp: number, humidity: number): number {
   const T = temp;
   const RH = humidity;
 
-  // Fórmula de Magnus-Tetens para pressão de vapor
   const e = (RH / 100) * 6.112 * Math.exp((17.67 * T) / (T + 243.5));
   const Tw = (243.5 * Math.log(e / 6.112)) / (17.67 - Math.log(e / 6.112));
 

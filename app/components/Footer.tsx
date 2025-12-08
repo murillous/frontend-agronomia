@@ -5,7 +5,6 @@ export default function Footer() {
     <footer className="w-full bg-white border-t border-slate-200 mt-auto">
       <div className="max-w-7xl mx-auto px-6 py-8">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Lado Esquerdo: Thera Software House */}
           <div className="flex flex-col items-center md:items-start space-y-2">
             <h3 className="text-sm font-bold text-slate-900 tracking-wide uppercase">
               Desenvolvido por Thera Software House
@@ -50,7 +49,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Lado Direito: Créditos Pessoais */}
           <div className="flex flex-col items-center md:items-end space-y-1 text-sm">
             <div className="flex items-center gap-2 text-slate-600">
               <Code size={16} className="text-emerald-500" />
@@ -67,11 +65,12 @@ export default function Footer() {
                 ↗
               </span>
             </a>
-            <span className="text-xs text-slate-400">Membro Thera Software House</span>
+            <span className="text-xs text-slate-400">
+              Membro Thera Software House
+            </span>
           </div>
         </div>
 
-        {/* Copyright / Versão */}
         <div className="mt-8 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center text-xs text-slate-400">
           <p>
             &copy; {new Date().getFullYear()} Thera Software House. Todos os

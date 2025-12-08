@@ -27,7 +27,6 @@ export default function AnalyticsPage() {
 
   const sortedHistory = [...history].reverse();
 
-  // CORREÇÃO AQUI: Tratamento seguro das datas para os labels dos gráficos
   const labels = sortedHistory.map((h) => {
     const timestamp = Number(h.ts);
     const date = new Date(timestamp);
@@ -71,22 +70,18 @@ export default function AnalyticsPage() {
   return (
     <div className="max-w-7xl mx-auto space-y-8 pb-12">
       <header>
-        <h1 className="text-2xl font-bold text-white">
-          Análises Agronômicas
-        </h1>
+        <h1 className="text-2xl font-bold text-white">Análises Agronômicas</h1>
         <p className="text-white">
           Ferramentas de tomada de decisão para pulverização e manejo.
         </p>
       </header>
 
       <section className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Painel de Decisão */}
         <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-6">
           <h2 className="font-bold text-slate-800 flex items-center gap-2">
             🌿 Recomendação de Pulverização
           </h2>
 
-          {/* Status Delta T */}
           <div
             className={clsx("p-4 rounded-xl border-l-4", {
               "bg-emerald-50 border-emerald-500": deltaStatus === "ideal",
@@ -118,7 +113,6 @@ export default function AnalyticsPage() {
             <p className="mt-2 text-sm font-bold text-slate-800">{deltaMsg}</p>
           </div>
 
-          {/* Status Vento */}
           <div
             className={clsx("p-4 rounded-xl border-l-4", {
               "bg-emerald-50 border-emerald-500": windStatus === "ideal",
@@ -151,7 +145,6 @@ export default function AnalyticsPage() {
           </div>
         </div>
 
-        {/* Gráfico Visual Delta T */}
         <div className="lg:col-span-2 bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
           <h3 className="text-base font-bold text-slate-800 mb-4">
             Carta Psicométrica (Delta T)
@@ -206,7 +199,6 @@ export default function AnalyticsPage() {
         </div>
       </section>
 
-      {/* Vento Detalhado */}
       <section className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm">
         <div className="flex flex-col md:flex-row gap-8 items-center">
           <div className="w-full md:w-1/3">

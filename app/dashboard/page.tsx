@@ -12,7 +12,7 @@ import {
   Wifi, 
   Battery, 
 } from "lucide-react";
-import { format, isValid } from "date-fns"; // Importe isValid para segurança extra
+import { format, isValid } from "date-fns"; 
 import { ptBR } from "date-fns/locale";
 
 export default function Dashboard() {
@@ -30,7 +30,6 @@ export default function Dashboard() {
 
   return (
     <div className="max-w-7xl mx-auto space-y-8">
-      {/* Header */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div>
           <h2 className="text-2xl font-bold text-white">Painel de Monitoramento</h2>
@@ -45,9 +44,7 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Hero Stats */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Card Principal - Temperatura */}
         <div className="lg:col-span-2 bg-linear-to-br from-slate-900 to-slate-800 text-white rounded-3xl p-8 flex flex-col justify-between shadow-lg relative overflow-hidden">
           <div className="relative z-10">
             <div className="flex items-center gap-2 mb-1 text-emerald-400">
@@ -68,7 +65,6 @@ export default function Dashboard() {
               <p className="text-2xl font-semibold">{current.Umidade.toFixed(0)}%</p>
             </div>
 
-            {/* Ponto de Orvalho */}
             <div>
               <div className="flex items-center gap-2 mb-1 text-amber-400">
                 <Thermometer size={16} />
@@ -77,7 +73,6 @@ export default function Dashboard() {
               <p className="text-2xl font-semibold">{current.pontoOrvalho.toFixed(1)}°</p>
             </div>
 
-            {/* Pressão */}
             <div>
               <div className="flex items-center gap-2 mb-1 text-violet-400">
                 <Gauge size={16} />
@@ -87,11 +82,9 @@ export default function Dashboard() {
             </div>
           </div>
           
-          {/* Decorative Circle */}
           <div className="absolute -right-12 -top-12 w-64 h-64 bg-emerald-500/20 rounded-full blur-3xl"></div>
         </div>
 
-        {/* Info Card - Precipitação */}
         <div className="bg-white rounded-3xl p-8 border border-slate-200 shadow-sm flex flex-col justify-center">
             <h3 className="text-lg font-semibold text-slate-800 mb-6 flex items-center gap-2">
                 <div className="p-2 bg-blue-50 rounded-lg text-blue-500">
@@ -112,7 +105,6 @@ export default function Dashboard() {
         </div>
       </div>
 
-      {/* Grid de Detalhes */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         <MetricCard icon={Wind} label="Vento Médio" value={current.VelocidadeMedia.toFixed(1)} unit="km/h" color="blue" />
         <MetricCard icon={Wind} label="Rajada Máx" value={current.VelocidadeMax.toFixed(1)} unit="km/h" color="indigo" />
@@ -120,7 +112,6 @@ export default function Dashboard() {
         <MetricCard icon={Battery} label="Bateria" value={current.Bateria} unit="%" color={current.Bateria < 20 ? "rose" : "emerald"} />
       </div>
 
-      {/* Status Sistema */}
       <div className="bg-slate-100 rounded-xl p-4 flex flex-wrap gap-6 text-sm text-slate-500 border border-slate-200">
          <span className="flex items-center gap-2"><Wifi size={16} className="text-slate-400"/> Sinal: <strong className="text-slate-700">{current.RSSI} dBm</strong></span>
          <span className="flex items-center gap-2"><Gauge size={16} className="text-slate-400"/> Boot Count: <strong className="text-slate-700">{current.Boot}</strong></span>
