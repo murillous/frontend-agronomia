@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/app/components/Sidebar";
+import Sidebar from "@/app/components/Sidebar"; // Ajuste o caminho se necessário
+import MobileNav from "@/app/components/MobileNav"; // IMPORTANTE: Importe o novo componente
 import Footer from "@/app/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -19,12 +20,17 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body
-        className={`${inter.className} bg-slate-50 text-slate-900 flex h-screen overflow-hidden`}
+        className={`${inter.className} bg-slate-50 text-slate-900 flex flex-col md:flex-row h-screen overflow-hidden`}
       >
         <Sidebar />
 
-        <main className="flex-1 flex flex-col h-full overflow-y-auto relative">
-          <div className="flex-1 p-8">{children}</div>
+        <MobileNav />
+
+        <main className="flex-1 flex flex-col h-full overflow-y-auto relative w-full">
+          <div className="flex-1 p-4 md:p-8">
+            {" "}
+            {children}
+          </div>
 
           <Footer />
         </main>
