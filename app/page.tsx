@@ -10,7 +10,6 @@ import {
 export default function ApiDocsPage() {
   return (
     <div className="max-w-5xl mx-auto space-y-8 pb-12">
-      {/* Header */}
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 bg-white p-8 rounded-3xl border border-slate-200 shadow-sm">
         <div className="space-y-2">
           <div className="flex items-center gap-2 text-emerald-600 font-medium mb-2">
@@ -35,7 +34,6 @@ export default function ApiDocsPage() {
         </div>
       </div>
 
-      {/* Base URL */}
       <div className="bg-slate-900 rounded-2xl p-6 text-slate-300 font-mono text-sm shadow-lg flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <Terminal size={18} className="text-emerald-400" />
@@ -55,9 +53,7 @@ export default function ApiDocsPage() {
         </a>
       </div>
 
-      {/* Endpoints Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Endpoint: Health */}
         <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-200 transition-colors group">
           <div className="flex items-center justify-between mb-4">
             <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs font-bold uppercase tracking-wide">
@@ -79,7 +75,6 @@ export default function ApiDocsPage() {
           </p>
         </div>
 
-        {/* Endpoint: Latest */}
         <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-200 transition-colors group">
           <div className="flex items-center justify-between mb-4">
             <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs font-bold uppercase tracking-wide">
@@ -101,7 +96,6 @@ export default function ApiDocsPage() {
           </p>
         </div>
 
-        {/* Endpoint: Period */}
         <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-emerald-200 transition-colors group">
           <div className="flex items-center justify-between mb-4">
             <span className="px-2 py-1 bg-emerald-100 text-emerald-700 rounded text-xs font-bold uppercase tracking-wide">
@@ -123,7 +117,6 @@ export default function ApiDocsPage() {
           </p>
         </div>
 
-        {/* Endpoint: Webhook */}
         <div className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:border-blue-200 transition-colors group">
           <div className="flex items-center justify-between mb-4">
             <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded text-xs font-bold uppercase tracking-wide">
@@ -146,7 +139,6 @@ export default function ApiDocsPage() {
         </div>
       </div>
 
-      {/* Exemplo de Uso */}
       <div className="bg-slate-50 rounded-3xl p-8 border border-slate-200">
         <h3 className="text-lg font-bold text-slate-800 mb-4">
           Exemplo de Consumo (JavaScript)
