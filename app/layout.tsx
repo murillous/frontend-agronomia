@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import Sidebar from "@/app/components/Sidebar"; // Ajuste o caminho se necessário
-import MobileNav from "@/app/components/MobileNav"; // IMPORTANTE: Importe o novo componente
+import Sidebar from "@/app/components/Sidebar"; 
+import MobileNav from "@/app/components/MobileNav";
 import Footer from "@/app/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });

@@ -38,7 +38,7 @@ export default function DeltaTChart({ currentTemp, currentHumidity }: Props) {
         label: "Atual",
         data: [{ x: currentTemp, y: currentHumidity }],
         backgroundColor: "#1e293b",
-        borderColor: "#fff",
+        borderColor: "#fffff",
         borderWidth: 3,
         pointRadius: 10,
         pointStyle: "crossRot",

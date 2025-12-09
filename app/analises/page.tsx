@@ -6,7 +6,7 @@ import DeltaTChart from "@/app/components/charts/DeltaTChart";
 import WindRose from "@/app/components/WindRose";
 import { Line, Bar } from "react-chartjs-2";
 import { AlertTriangle, CheckCircle, XCircle } from "lucide-react";
-import { format, isValid } from "date-fns"; // Importação necessária
+import { format, isValid } from "date-fns"; 
 import clsx from "clsx";
 
 export default function AnalyticsPage() {
